@@ -27,6 +27,8 @@ function handleReleaseBot(bot) {
 );
 setEnlistedBots(updatedEnlistedBots);
 };
+
+
 function handleDischargeBot(bot) {
   setEnlistedBots((prevEnlistedBots)=>{
     const updatedEnlistedBots = prevEnlistedBots.filter((enlistedBot)=> enlistedBot.id !== bot.id);
@@ -34,34 +36,13 @@ function handleDischargeBot(bot) {
       method: 'DELETE',
     })
     .then((response) => response.json());
-    .then(()=>{
+    
       setEnlistedBots(updatedEnlistedBots);
-    })
+   
     return updatedEnlistedBots;
   })
 }
-
-  // const updatedEnlistedBots = enlistedBots.filter((enlistedBot) => enlistedBot.id !== bot.id);
-  // setEnlistedBots(updatedEnlistedBots);
-
-    // Update the state immediately using a callback function
-    //setEnlistedBots((prevEnlistedBots) => {
-      // Ensure that the state is not overwritten by other updates
-    //   if (JSON.stringify(prevEnlistedBots) === JSON.stringify(enlistedBots)) {
-    //     return updatedEnlistedBots;
-    //   }
-    //   return prevEnlistedBots;
-    // });
-  
-  //   fetch(`http://localhost:3000/bots/${bot.id}`, {
-  //     method: 'DELETE',
-  //   }).then((response) => response.json());
-    
-  // setEnlistedBots([... enlistedBots, bot]);
-  // };
-   
-  
-  
+ 
 
 
 console.log(bots)
