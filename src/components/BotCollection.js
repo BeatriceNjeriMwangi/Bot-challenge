@@ -9,7 +9,7 @@ function BotCollection(){
 
 
 useEffect(() => {
-  fetch('http://localhost:3000/bots')
+  fetch('https://bot-t0xr.onrender.com/bots')
   .then(res => res.json())
   .then((data) => {
     setBots(data);
@@ -32,7 +32,7 @@ setEnlistedBots(updatedEnlistedBots);
 function handleDischargeBot(bot) {
   setEnlistedBots((prevEnlistedBots)=>{
     const updatedEnlistedBots = prevEnlistedBots.filter((enlistedBot)=> enlistedBot.id !== bot.id);
-    fetch(`http://localhost:3000/bots/${bot.id}`, {
+    fetch(`https://bot-t0xr.onrender.com/bots/${bot.id}`, {
       method: 'DELETE',
     })
     .then((response) => response.json());

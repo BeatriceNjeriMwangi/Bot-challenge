@@ -10,7 +10,7 @@ function BotCard({bot, onEnlist}){
           
           
             
-                <img src={bot.avatar_url} alt={bot.name} />
+                <img src={bot.avatar_url} alt={bot.name} style={{backgroundColor:"blue"}} />
                 <p>Name: {bot.name}</p>
                 <p>{bot.description}</p>
                 <p>{bot.catchphrase}</p>
